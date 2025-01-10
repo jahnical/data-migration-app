@@ -5,8 +5,102 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2024-06-04T11:01:31.012Z\n"
-"PO-Revision-Date: 2024-06-04T11:01:31.013Z\n"
+"POT-Creation-Date: 2025-01-10T13:52:17.523Z\n"
+"PO-Revision-Date: 2025-01-10T13:52:17.523Z\n"
+
+msgid "Migrating {{count}} TEIs to {{targetOrgUnit}}..."
+msgid_plural "Migrating {{count}} TEIs to {{targetOrgUnit}}..."
+msgstr[0] "Migrating {{count}} TEIs to {{targetOrgUnit}}..."
+msgstr[1] "Migrating {{count}} TEIs to {{targetOrgUnit}}..."
+
+msgid "Could not migrate TEIs"
+msgstr "Could not migrate TEIs"
+
+msgid ""
+"The TEIs couldn't be migrated. Try again or contact your system "
+"administrator."
+msgstr ""
+"The TEIs couldn't be migrated. Try again or contact your system "
+"administrator."
+
+msgid "Migration successful"
+msgstr "Migration successful"
+
+msgid "All TEIs have been successfully migrated to the selected org unit."
+msgstr "All TEIs have been successfully migrated to the selected org unit."
+
+msgid "Close"
+msgstr "Close"
+
+msgid "Cancel"
+msgstr "Cancel"
+
+msgid "Migrate"
+msgstr "Migrate"
+
+msgid "Could not load TEIs"
+msgstr "Could not load TEIs"
+
+msgid ""
+"The TEIs couldn't be retrieved. Try again or contact your system "
+"administrator."
+msgstr ""
+"The TEIs couldn't be retrieved. Try again or contact your system "
+"administrator."
+
+msgid "Instance ID"
+msgstr "Instance ID"
+
+msgid "Created At"
+msgstr "Created At"
+
+msgid "Last Updated At"
+msgstr "Last Updated At"
+
+msgid "Stored By"
+msgstr "Stored By"
+
+msgid "Last Updated By"
+msgstr "Last Updated By"
+
+msgid "Filter by \"{{name}}\""
+msgstr "Filter by \"{{name}}\""
+
+msgid "Add Column"
+msgstr "Add Column"
+
+msgid "Remove Column"
+msgstr "Remove Column"
+
+msgid "Select number range"
+msgstr "Select number range"
+
+msgid "Min value"
+msgstr "Min value"
+
+msgid "Max value"
+msgstr "Max value"
+
+msgid "Select date range"
+msgstr "Select date range"
+
+msgid "Start date"
+msgstr "Start date"
+
+msgid "End date"
+msgstr "End date"
+
+msgid "Select username"
+msgstr "Select username"
+
+msgid "Enter keyword"
+msgstr "Enter keyword"
+
+msgid "Remove Filter"
+msgstr "Remove Filter"
+
+msgid "Apply Filter"
+msgstr "Apply Filter"
 
 msgid "Add to {{axisName}}"
 msgstr "Add to {{axisName}}"
@@ -92,12 +186,6 @@ msgstr "Define start - end dates"
 
 msgid "Start and end dates are inclusive and will be included in the outputs."
 msgstr "Start and end dates are inclusive and will be included in the outputs."
-
-msgid "Start date"
-msgstr "Start date"
-
-msgid "End date"
-msgstr "End date"
 
 msgid "No items selected"
 msgstr "No items selected"
@@ -216,26 +304,14 @@ msgstr "Enrollment"
 msgid "Tracked entity"
 msgstr "Tracked entity"
 
-msgid "See individual event data from a Tracker program stage or event program."
-msgstr "See individual event data from a Tracker program stage or event program."
-
-msgid "See data from multiple program stages in a Tracker program."
-msgstr "See data from multiple program stages in a Tracker program."
-
-msgid "See individual tracked entities from one or more Tracker programs."
-msgstr "See individual tracked entities from one or more Tracker programs."
+msgid "Select program to migrate data."
+msgstr "Select program to migrate data."
 
 msgid "Global dimensions"
 msgstr "Global dimensions"
 
 msgid "Program dimensions"
 msgstr "Program dimensions"
-
-msgid "Input: {{type}}"
-msgstr "Input: {{type}}"
-
-msgid "Choose an input first"
-msgstr "Choose an input first"
 
 msgid "Program data dimensions"
 msgstr "Program data dimensions"
@@ -341,8 +417,8 @@ msgstr "Unsaved visualization"
 msgid "Edited"
 msgstr "Edited"
 
-msgid "Line list"
-msgstr "Line list"
+msgid "Org Unit Data Migration"
+msgstr "Org Unit Data Migration"
 
 msgid "\"{{- deletedObject}}\" successfully deleted."
 msgstr "\"{{- deletedObject}}\" successfully deleted."
@@ -391,17 +467,17 @@ msgid "Getting started"
 msgstr "Getting started"
 
 msgid ""
-"All dimensions that you can use to build visualizations are shown in the "
-"sections in the left sidebar."
+"Select program and organisation unit in the left sidebar to retrive and "
+"TEIs and migrate them."
 msgstr ""
-"All dimensions that you can use to build visualizations are shown in the "
-"sections in the left sidebar."
+"Select program and organisation unit in the left sidebar to retrive and "
+"TEIs and migrate them."
 
-msgid "Add dimensions to the layout above."
-msgstr "Add dimensions to the layout above."
+msgid "Apply necessary filters to remain with the only data you want to migrate."
+msgstr "Apply necessary filters to remain with the only data you want to migrate."
 
-msgid "Click a dimension to add or remove conditions."
-msgstr "Click a dimension to add or remove conditions."
+msgid "Click an attribute to add or remove a filter."
+msgstr "Click an attribute to add or remove a filter."
 
 msgid "Your most viewed line lists"
 msgstr "Your most viewed line lists"

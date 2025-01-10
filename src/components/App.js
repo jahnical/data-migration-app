@@ -70,7 +70,7 @@ import {
     sGetLoadError,
 } from '../reducers/loader.js'
 import { sGetMetadata } from '../reducers/metadata.js'
-import { sGetUiShowDetailsPanel } from '../reducers/ui.js'
+import { sGetUiProgramId, sGetUiShowDetailsPanel } from '../reducers/ui.js'
 import classes from './App.module.css'
 import { default as DetailsPanel } from './DetailsPanel/DetailsPanel.js'
 import { default as DialogManager } from './Dialogs/DialogManager.js'
@@ -78,11 +78,13 @@ import DndContext from './DndContext.js'
 import { InterpretationModal } from './InterpretationModal/index.js'
 import Layout from './Layout/Layout.js'
 import LoadingMask from './LoadingMask/LoadingMask.js'
-import { MainSidebar } from './MainSidebar/index.js'
+import MainSidebar from './MainSidebar/MainSidebar.js'
 import { default as TitleBar } from './TitleBar/TitleBar.js'
 import { Toolbar } from './Toolbar/Toolbar.js'
 import StartScreen from './Visualization/StartScreen.js'
 import { Visualization } from './Visualization/Visualization.js'
+import TEIs from './DataMigration/TEIs.js'
+import { migrationSelectors } from '../reducers/migration.js'
 
 const dimensionFields = () =>
     'dimension,dimensionType,filter,program[id],programStage[id],optionSet[id],valueType,legendSet[id],repetition,items[dimensionItem~rename(id)]'
@@ -160,6 +162,8 @@ const optionsQuery = {
 }
 const App = () => {
     const dataEngine = useDataEngine()
+    const programId = useSelector(sGetUiProgramId)
+    const orgUnitId = useSelector(migrationSelectors.getMigrationOrgUnit)
     const [aboutAOUnitRenderId, setAboutAOUnitRenderId] = useState(1)
     const [interpretationsUnitRenderId, setInterpretationsUnitRenderId] =
         useState(1)
@@ -537,11 +541,11 @@ const App = () => {
                         <div className={classes.mainCenterLayout}>
                             <Layout />
                         </div>
-                        <div className={classes.mainCenterTitlebar}>
+                         {/* <div className={classes.mainCenterTitlebar}>
                             <TitleBar />
-                        </div>
+                        </div> */}
                         <div className={cx(classes.mainCenterCanvas)}>
-                            {(initialLoadIsComplete &&
+                            {/* {(initialLoadIsComplete &&
                                 !current &&
                                 !isLoading) ||
                             error ? (
@@ -580,7 +584,29 @@ const App = () => {
                                         />
                                     )}
                                 </>
-                            )}
+                            )} */}
+                            {   (initialLoadIsComplete &&
+                                (!programId || !orgUnitId) &&
+                                !isLoading) ||
+                            error ? <StartScreen />
+                             :
+                            <>
+                                {isLoading && (
+                                    <div className={classes.loadingCover}>
+                                        <LoadingMask />
+                                    </div>
+                                )}
+                                <div style={{
+                                        margin: '16px auto',  // Center horizontally
+                                        maxWidth: '95%',
+                                        overflowX: 'auto',
+                                    }}>
+                                    <TEIs/>
+
+                                </div>
+
+                            </>
+                                }
                         </div>
                     </div>
                 </DndContext>

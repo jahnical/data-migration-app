@@ -43,9 +43,13 @@ export const InputPanel = ({ visible }) => {
         }
     }
 
+    if (selectedInput !== OUTPUT_TYPE_ENROLLMENT) {
+         setSelectedInput(OUTPUT_TYPE_ENROLLMENT)
+    }
+
     return (
         <div className={styles.container} data-test="input-panel">
-            <InputOption
+            {/* <InputOption
                 dataTest="input-event"
                 header={getLabelForInputType(OUTPUT_TYPE_EVENT)}
                 description={i18n.t(
@@ -55,19 +59,19 @@ export const InputPanel = ({ visible }) => {
                 selected={selectedInput === OUTPUT_TYPE_EVENT}
             >
                 {selectedInput === OUTPUT_TYPE_EVENT && <ProgramSelect />}
-            </InputOption>
+            </InputOption> */}
             <InputOption
                 dataTest="input-enrollment"
-                header={getLabelForInputType(OUTPUT_TYPE_ENROLLMENT)}
+                header= "Program Selection" //{getLabelForInputType(OUTPUT_TYPE_ENROLLMENT)}
                 description={i18n.t(
-                    'See data from multiple program stages in a Tracker program.'
+                    'Select program to migrate data.'
                 )}
                 onClick={() => setSelectedInput(OUTPUT_TYPE_ENROLLMENT)}
                 selected={selectedInput === OUTPUT_TYPE_ENROLLMENT}
             >
                 {selectedInput === OUTPUT_TYPE_ENROLLMENT && <ProgramSelect />}
             </InputOption>
-            {`${serverVersion.major}.${serverVersion.minor}.${
+            {/* {`${serverVersion.major}.${serverVersion.minor}.${
                 serverVersion.patch || 0
             }` >= '2.41.0' && (
                 <InputOption
@@ -83,7 +87,7 @@ export const InputPanel = ({ visible }) => {
                         <TypeSelect />
                     )}
                 </InputOption>
-            )}
+            )} */}
         </div>
     )
 }

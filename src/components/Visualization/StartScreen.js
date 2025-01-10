@@ -90,17 +90,17 @@ const StartScreen = ({ error, setLoadError }) => {
                             <ul className={styles.guide}>
                                 <li className={styles.guideItem}>
                                     {i18n.t(
-                                        'All dimensions that you can use to build visualizations are shown in the sections in the left sidebar.'
+                                        'Select program and organisation unit in the left sidebar to retrive and TEIs and migrate them.'
                                     )}
                                 </li>
                                 <li className={styles.guideItem}>
                                     {i18n.t(
-                                        'Add dimensions to the layout above.'
+                                        'Apply necessary filters to remain with the only data you want to migrate.'
                                     )}
                                 </li>
                                 <li className={styles.guideItem}>
                                     {i18n.t(
-                                        'Click a dimension to add or remove conditions.'
+                                        'Click an attribute to add or remove a filter.'
                                     )}
                                 </li>
                             </ul>

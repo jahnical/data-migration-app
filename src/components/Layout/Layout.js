@@ -10,6 +10,7 @@ import {
 } from '../../reducers/ui.js'
 import LineListLayout from './LineListLayout/LineListLayout.js'
 import classes from './styles/Layout.module.css'
+import TeiFilterableFields from '../DataMigration/TeiFilterableFields.js'
 
 const componentMap = {
     [LAYOUT_TYPE_LINE_LIST]: LineListLayout,
@@ -41,7 +42,7 @@ const Layout = () => {
                     [classes.expanded]: isExpanded,
                 })}
             >
-                <LayoutComponent />
+                <TeiFilterableFields />
             </div>
             <button
                 className={classes.button}
