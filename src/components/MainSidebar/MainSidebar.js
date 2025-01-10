@@ -2,12 +2,8 @@ import { Button, Divider } from '@dhis2/ui'
 import cx from 'classnames'
 import React, { useCallback, useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import {
-    acSetUiAccessoryPanelActiveTab,
-} from '../../actions/ui.js'
-import {
-    ACCESSORY_PANEL_TAB_INPUT,
-} from '../../modules/accessoryPanelConstants.js'
+import { acSetUiAccessoryPanelActiveTab } from '../../actions/ui.js'
+import { ACCESSORY_PANEL_TAB_INPUT } from '../../modules/accessoryPanelConstants.js'
 import { migrationSelectors } from '../../reducers/migration.js'
 import {
     sGetUiShowAccessoryPanel,
@@ -18,9 +14,7 @@ import DataMigrationModal from '../DataMigration/DataMigrationModal.js'
 import OrgUnitSelection from '../DataMigration/OrgUnitSelection.js'
 import { InputPanel } from './InputPanel/index.js'
 import styles from './MainSidebar.module.css'
-import {
-    useSelectedDimensions,
-} from './SelectedDimensionsContext.js'
+import { useSelectedDimensions } from './SelectedDimensionsContext.js'
 import { useResizableAccessorySidebar } from './useResizableAccessorySidebar.js'
 
 const MainSidebar = () => {
@@ -86,29 +80,37 @@ const MainSidebar = () => {
                     style={accessoryInnerStyle}
                     onTransitionEnd={() => setIsTransitioning(false)}
                 >
-
                     <InputPanel
                         visible={selectedTabId === ACCESSORY_PANEL_TAB_INPUT}
                     />
 
                     <Divider />
 
-                    <div style={{
-                                overflow: 'auto',
-                                maxHeight: '512px'
-                            }}>
+                    <div
+                        style={{
+                            overflow: 'auto',
+                            maxHeight: '512px',
+                        }}
+                    >
                         <h4>Select Source Organisation Unit</h4>
                         <OrgUnitSelection isSourceOrgUnit={true} />
                     </div>
 
                     <Divider />
 
-                    {isOpen && <DataMigrationModal onClose={handleDMmodalClose} />}
+                    {isOpen && (
+                        <DataMigrationModal onClose={handleDMmodalClose} />
+                    )}
 
                     <Button
                         primary
                         onClick={onMigrateDataCliked}
-                        style={{ width: '100%', maxWidth: '512px', height: '48px', marginTop: '16px' }}
+                        style={{
+                            width: '100%',
+                            maxWidth: '512px',
+                            height: '48px',
+                            marginTop: '16px',
+                        }}
                         disabled={!programId || !orgUnitId}
                     >
                         Migrate Data

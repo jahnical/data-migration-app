@@ -20,41 +20,41 @@ const OrgUnitSelection = ({
     const [selected, setSelected] = useState({})
     const dispatch = useDispatch()
 
-        const setValues = (item) => {
-            console.log(item)
-            if (item.checked) {
-                const forMetadata = {}
-                const forParentGraphMap = {}
+    const setValues = (item) => {
+        console.log(item)
+        if (item.checked) {
+            const forMetadata = {}
+            const forParentGraphMap = {}
 
-                forMetadata[item.id] = {
-                    id: item.id,
-                    name: item.name || item.displayName,
-                    displayName: item.displayName,
-                }
+            forMetadata[item.id] = {
+                id: item.id,
+                name: item.name || item.displayName,
+                displayName: item.displayName,
+            }
 
-                if (item.path) {
-                    const path = removeLastPathSegment(item.path)
+            if (item.path) {
+                const path = removeLastPathSegment(item.path)
 
-                    forParentGraphMap[item.id] =
-                        path === `/${item.id}` ? '' : path.replace(/^\//, '')
-                }
+                forParentGraphMap[item.id] =
+                    path === `/${item.id}` ? '' : path.replace(/^\//, '')
+            }
 
-                addMetadata(forMetadata)
-                addParentGraphMap(forParentGraphMap)
-                setSelected(item)
-                if (isSourceOrgUnit) {
-                    dispatch(migrationActionCreators.setSourceOrgUnit(item.id))
-                } else {
-                    dispatch(migrationActionCreators.setTargetOrgUnit(item.id))
-                }
+            addMetadata(forMetadata)
+            addParentGraphMap(forParentGraphMap)
+            setSelected(item)
+            if (isSourceOrgUnit) {
+                dispatch(migrationActionCreators.setSourceOrgUnit(item.id))
+            } else {
+                dispatch(migrationActionCreators.setTargetOrgUnit(item.id))
             }
         }
+    }
 
-        console.log(metadata)
+    console.log(metadata)
 
-        const roots = rootOrgUnits.map((rootOrgUnit) => rootOrgUnit.id)
+    const roots = rootOrgUnits.map((rootOrgUnit) => rootOrgUnit.id)
 
-        console.log(selected)
+    console.log(selected)
     return (
         <OrganisationUnitTree
             roots={roots}

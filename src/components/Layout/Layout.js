@@ -3,18 +3,12 @@ import cx from 'classnames'
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { acSetShowExpandedLayoutPanel } from '../../actions/ui.js'
-import { LAYOUT_TYPE_LINE_LIST } from '../../modules/layout.js'
 import {
     sGetUiLayoutPanelHidden,
     sGetUiShowExpandedLayoutPanel,
 } from '../../reducers/ui.js'
-import LineListLayout from './LineListLayout/LineListLayout.js'
-import classes from './styles/Layout.module.css'
 import TeiFilterableFields from '../DataMigration/TeiFilterableFields.js'
-
-const componentMap = {
-    [LAYOUT_TYPE_LINE_LIST]: LineListLayout,
-}
+import classes from './styles/Layout.module.css'
 
 const Layout = () => {
     const isExpanded = useSelector((state) =>
@@ -24,9 +18,6 @@ const Layout = () => {
     const dispatch = useDispatch()
     const toggleExpanded = () =>
         dispatch(acSetShowExpandedLayoutPanel(!isExpanded))
-
-    const layoutType = LAYOUT_TYPE_LINE_LIST
-    const LayoutComponent = componentMap[layoutType]
 
     const ButtonIcon = isExpanded ? IconChevronUp16 : IconChevronDown16
 
